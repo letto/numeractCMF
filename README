@@ -1,0 +1,12 @@
+
+First create the docker image:
+    docker image build -t numeractcmf --label numeractcmf .
+
+Optionally, add the secret password to the environment file:
+    cp passwords.example passwords
+    cat passwords >> .env
+The password can also be added manually:
+    echo PASSWORD="secret" >> .env
+
+The container is then ready to run:
+    docker container run -it -l numeractcmf --name numeractcmf numeractcmf
